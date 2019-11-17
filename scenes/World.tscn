@@ -1,0 +1,1067 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scenes/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Ramp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/SmallPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LowSmallPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/SnowSmallPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/SnowPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/SnowSmallPlatformLow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/SnowTree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Bridge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Flowers.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Rock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Mushrooms.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=14]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0392157, 0.952941, 0.247059, 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 69, 69 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 34.5, 0, 34.5, -34.5, 0, 34.5, 34.5, 0, -34.5, -34.5, 0, -34.5 )
+
+[node name="World" type="Spatial"]
+
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+shape = SubResource( 3 )
+
+[node name="Normal" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 0.999087, 0, -0.0427261, 0, 1, 0, 0.0427261, 0, 0.999087, -3.80476, 4.71521, 6.40004 )
+
+[node name="Platform" parent="Normal" instance=ExtResource( 1 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, 5.84167, -4.71352, -6.83392 )
+
+[node name="Platform2" parent="Normal" instance=ExtResource( 1 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, 1.15867, -3.02833, -12.1337 )
+
+[node name="Platform3" parent="Normal" instance=ExtResource( 1 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, 1.24102, -3.02833, -10.208 )
+
+[node name="Platform4" parent="Normal" instance=ExtResource( 1 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, -0.65978, -3.02833, -10.1267 )
+
+[node name="Platform5" parent="Normal" instance=ExtResource( 1 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, -0.74157, -3.02833, -12.0393 )
+
+[node name="Ramp" parent="Normal" instance=ExtResource( 2 )]
+transform = Transform( -0.999087, 0, -0.0427262, 0, 1, 0, 0.0427262, 0, -0.999087, 7.34235, -4.71521, -6.71989 )
+
+[node name="Ramp2" parent="Normal" instance=ExtResource( 2 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, -0.498186, -0.56041, -2.47193 )
+
+[node name="SmallPlatform" parent="Normal" instance=ExtResource( 3 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, 6.1335, -4.38505, -9.84914 )
+
+[node name="SmallPlatform4" parent="Normal" instance=ExtResource( 3 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, -0.160528, -1.30512, -4.22924 )
+
+[node name="SmallPlatform2" parent="Normal" instance=ExtResource( 3 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, 5.07559, -4.15802, -11.182 )
+
+[node name="SmallPlatform3" parent="Normal" instance=ExtResource( 3 )]
+transform = Transform( 0.999087, 0, 0.0427261, 0, 1, 0, -0.0427261, 0, 0.999087, 3.69435, -3.72662, -12.4352 )
+
+[node name="LowSmallPlatform" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.588447, -1.68381, -8.43078 )
+
+[node name="LowSmallPlatform2" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.559298, -1.68381, -7.74916 )
+
+[node name="LowSmallPlatform3" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, 0.187545, -1.68381, -7.7811 )
+
+[node name="LowSmallPlatform4" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, 0.153695, -1.68381, -8.57263 )
+
+[node name="LowSmallPlatform5" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, 0.0281751, -1.16602, -6.16811 )
+
+[node name="LowSmallPlatform6" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.716336, -1.16602, -6.13627 )
+
+[node name="LowSmallPlatform7" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.834597, 0, -1.46216 )
+
+[node name="LowSmallPlatform8" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -1.61947, 0, -1.4286 )
+
+[node name="LowSmallPlatform9" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.0916712, 0, -1.49393 )
+
+[node name="LowSmallPlatform10" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.0593066, 0, -0.737136 )
+
+[node name="LowSmallPlatform11" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.832201, 0, -0.704083 )
+
+[node name="LowSmallPlatform12" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -1.59784, 0, -0.67134 )
+
+[node name="LowSmallPlatform13" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -1.56627, 0, 0.0669813 )
+
+[node name="LowSmallPlatform14" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, -0.792106, 0, 0.0338745 )
+
+[node name="LowSmallPlatform15" parent="Normal" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, -3.72529e-009, 0, 1, 0, 3.72529e-009, 0, 1, 0, 0, 0 )
+
+[node name="Snow" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="SnowSmallPlatform" parent="Snow" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98073, 4.52697, 8.27129 )
+
+[node name="SnowSmallPlatform2" parent="Snow" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42268, 5.06442, 9.7711 )
+
+[node name="SnowSmallPlatform3" parent="Snow" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54587, 5.46371, 10.9546 )
+
+[node name="SnowSmallPlatform4" parent="Snow" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3066, 11.7256, 7.80849 )
+
+[node name="SnowPlatform" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01008, 5.73594, 13.5594 )
+
+[node name="SnowPlatform2" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20367, 5.73594, 13.5594 )
+
+[node name="SnowPlatform5" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6719, 6.02207, 20.9902 )
+
+[node name="SnowPlatform3" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20367, 5.73594, 15.1603 )
+
+[node name="SnowPlatform4" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04745, 5.73594, 15.1603 )
+
+[node name="SnowPlatform6" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96249, 7.48018, 20.7071 )
+
+[node name="SnowPlatform7" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96249, 7.48018, 18.8864 )
+
+[node name="SnowPlatform8" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69825, 7.48018, 18.8864 )
+
+[node name="SnowPlatform9" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69825, 7.48018, 20.6816 )
+
+[node name="SnowPlatform10" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69825, 7.97712, 19.6816 )
+
+[node name="SnowPlatform11" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5364, 8.5016, 19.2952 )
+
+[node name="SnowPlatform12" parent="Snow" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2939, 10.354, 14.3835 )
+
+[node name="SnowSmallPlatformLow" parent="Snow" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.896647, 6.97487, 20.8298 )
+
+[node name="SnowSmallPlatformLow2" parent="Snow" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15461, 7.20035, 20.5024 )
+
+[node name="SnowSmallPlatformLow3" parent="Snow" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36591, 7.46969, 20.0424 )
+
+[node name="SnowSmallPlatformLow4" parent="Snow" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4494, 9.61087, 18.39 )
+
+[node name="SnowSmallPlatformLow5" parent="Snow" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6081, 10.2301, 17.5491 )
+
+[node name="SnowSmallPlatformLow6" parent="Snow" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6081, 10.5311, 16.1684 )
+
+[node name="SnowTree" parent="Snow" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4049, 12.8798, 7.9167 )
+
+[node name="Others" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Bridge" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1919, 5.65181, 16.2502 )
+
+[node name="Bridge5" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17385, 5.65181, 16.2502 )
+
+[node name="Bridge6" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13001, 5.65181, 16.2502 )
+
+[node name="Bridge7" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13001, 5.65181, 17.2151 )
+
+[node name="Bridge8" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12227, 5.65181, 17.2151 )
+
+[node name="Bridge9" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12227, 5.65181, 18.093 )
+
+[node name="Bridge10" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11009, 5.65181, 18.093 )
+
+[node name="Bridge11" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11009, 5.65181, 18.9595 )
+
+[node name="Bridge12" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18518, 5.65181, 18.9595 )
+
+[node name="Bridge2" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1919, 5.65181, 17.1593 )
+
+[node name="Bridge3" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1919, 5.65181, 18.0522 )
+
+[node name="Bridge4" parent="Others" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1919, 5.65181, 18.9842 )
+
+[node name="Flowers" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40253 )
+
+[node name="Flowers15" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0979, 0, 1.98585 )
+
+[node name="Flowers16" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94867, 0, 8.41966 )
+
+[node name="Flowers17" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4016, 0, 11.8559 )
+
+[node name="Flowers18" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7627, 0, 4.18963 )
+
+[node name="Flowers19" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18743, 0, -6.9262 )
+
+[node name="Flowers20" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3, 0, -6.9262 )
+
+[node name="Flowers21" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2607, 0, 0.30089 )
+
+[node name="Flowers22" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.61, 0, 6.86204 )
+
+[node name="Flowers23" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.65919, 0, 13.7543 )
+
+[node name="Flowers2" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.839189 )
+
+[node name="Flowers3" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.839189 )
+
+[node name="Flowers4" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0439398, 6.66928, 13.7549 )
+
+[node name="Flowers5" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04466, 8.49291, 18.0113 )
+
+[node name="Flowers6" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74654, 8.49291, 18.0113 )
+
+[node name="Flowers7" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74654, 8.49291, 18.6802 )
+
+[node name="Flowers8" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74654, 8.49291, 19.5142 )
+
+[node name="Flowers9" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74654, 8.49291, 20.2276 )
+
+[node name="Flowers10" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74654, 8.49291, 20.9055 )
+
+[node name="Flowers11" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83734, 8.49291, 20.9055 )
+
+[node name="Flowers12" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83734, 8.49291, 20.139 )
+
+[node name="Flowers13" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83734, 8.49291, 19.2653 )
+
+[node name="Flowers14" parent="Others" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83734, 8.49291, 18.5759 )
+
+[node name="Asthetic" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Tree" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.27098 )
+
+[node name="Tree210" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7194, 0, 16.8472 )
+
+[node name="Tree217" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8231, 0, 7.46173 )
+
+[node name="Tree211" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95162, 0, 21.7352 )
+
+[node name="Tree212" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1306, 0, 2.37787 )
+
+[node name="Tree213" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3779, 0, -13.2571 )
+
+[node name="Tree214" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3117, 0, -7.38517 )
+
+[node name="Tree215" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31057, 0, -6.14301 )
+
+[node name="Tree216" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3647, 0, -15.6496 )
+
+[node name="Tree218" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5505, 0, -7.89575 )
+
+[node name="Tree219" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81326, 5.10555, 6.42979 )
+
+[node name="Tree2" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 2.27098 )
+
+[node name="Tree3" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 0.27098 )
+
+[node name="Tree4" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -1.72902 )
+
+[node name="Tree5" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -3.72902 )
+
+[node name="Tree6" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -5.72902 )
+
+[node name="Tree7" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -7.72902 )
+
+[node name="Tree8" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -9.72902 )
+
+[node name="Tree9" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -11.729 )
+
+[node name="Tree10" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -13.729 )
+
+[node name="Tree11" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -15.729 )
+
+[node name="Tree12" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -17.729 )
+
+[node name="Tree13" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -19.729 )
+
+[node name="Tree14" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7184, 0, -19.729 )
+
+[node name="Tree15" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7184, 0, -19.729 )
+
+[node name="Tree16" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7184, 0, -19.729 )
+
+[node name="Tree17" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7184, 0, -19.729 )
+
+[node name="Tree18" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7184, 0, -19.729 )
+
+[node name="Tree19" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7184, 0, -19.729 )
+
+[node name="Tree20" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7184, 0, -19.729 )
+
+[node name="Tree21" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7184, 0, -19.729 )
+
+[node name="Tree22" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71843, 0, -19.729 )
+
+[node name="Tree23" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71843, 0, -19.729 )
+
+[node name="Tree24" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71843, 0, -19.729 )
+
+[node name="Tree25" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71843, 0, -19.729 )
+
+[node name="Tree26" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718426, 0, -19.729 )
+
+[node name="Tree27" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28157, 0, -19.729 )
+
+[node name="Tree28" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28157, 0, -19.729 )
+
+[node name="Tree29" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28157, 0, -19.729 )
+
+[node name="Tree30" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28157, 0, -19.729 )
+
+[node name="Tree31" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28157, 0, -19.729 )
+
+[node name="Tree32" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2816, 0, -19.729 )
+
+[node name="Tree33" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2816, 0, -19.729 )
+
+[node name="Tree34" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2816, 0, -19.729 )
+
+[node name="Tree35" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2816, 0, -19.729 )
+
+[node name="Tree36" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2816, 0, -19.729 )
+
+[node name="Tree37" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2816, 0, -19.729 )
+
+[node name="Tree38" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2816, 0, -19.729 )
+
+[node name="Tree39" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -19.729 )
+
+[node name="Tree40" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -17.729 )
+
+[node name="Tree41" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -15.729 )
+
+[node name="Tree42" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -13.729 )
+
+[node name="Tree43" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -11.729 )
+
+[node name="Tree44" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -9.72902 )
+
+[node name="Tree45" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -7.72902 )
+
+[node name="Tree46" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -5.72902 )
+
+[node name="Tree47" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -3.72902 )
+
+[node name="Tree48" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -1.72902 )
+
+[node name="Tree49" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 0.474445 )
+
+[node name="Tree50" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 2.47445 )
+
+[node name="Tree51" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 4.47445 )
+
+[node name="Tree52" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 6.47445 )
+
+[node name="Tree53" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 8.47445 )
+
+[node name="Tree54" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 10.4744 )
+
+[node name="Tree55" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 12.4744 )
+
+[node name="Tree56" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 14.4744 )
+
+[node name="Tree57" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 16.4744 )
+
+[node name="Tree58" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 18.4744 )
+
+[node name="Tree59" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 20.4744 )
+
+[node name="Tree60" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 22.4744 )
+
+[node name="Tree61" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 24.4744 )
+
+[node name="Tree62" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 26.4744 )
+
+[node name="Tree63" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 28.4744 )
+
+[node name="Tree64" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2816, 0, 28.4744 )
+
+[node name="Tree65" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2816, 0, 28.4744 )
+
+[node name="Tree66" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2816, 0, 28.4744 )
+
+[node name="Tree67" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2816, 0, 28.4744 )
+
+[node name="Tree68" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2816, 0, 28.4744 )
+
+[node name="Tree69" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2816, 0, 28.4744 )
+
+[node name="Tree70" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2816, 0, 28.4744 )
+
+[node name="Tree71" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28157, 0, 28.4744 )
+
+[node name="Tree72" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28157, 0, 28.4744 )
+
+[node name="Tree73" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28157, 0, 28.4744 )
+
+[node name="Tree74" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28157, 0, 28.4744 )
+
+[node name="Tree75" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28157, 0, 28.4744 )
+
+[node name="Tree76" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718426, 0, 28.4744 )
+
+[node name="Tree77" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71843, 0, 28.4744 )
+
+[node name="Tree78" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71843, 0, 28.4744 )
+
+[node name="Tree79" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71843, 0, 28.4744 )
+
+[node name="Tree80" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71843, 0, 28.4744 )
+
+[node name="Tree81" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7184, 0, 28.4744 )
+
+[node name="Tree82" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7184, 0, 28.4744 )
+
+[node name="Tree83" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7184, 0, 28.4744 )
+
+[node name="Tree84" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7184, 0, 28.4744 )
+
+[node name="Tree85" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7184, 0, 28.4744 )
+
+[node name="Tree86" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7184, 0, 28.4744 )
+
+[node name="Tree87" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7184, 0, 28.4744 )
+
+[node name="Tree88" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7184, 0, 28.4744 )
+
+[node name="Tree89" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 28.4744 )
+
+[node name="Tree90" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 26.4744 )
+
+[node name="Tree91" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 24.4744 )
+
+[node name="Tree92" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 22.4744 )
+
+[node name="Tree102" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 22.4744 )
+
+[node name="Tree103" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 20.4744 )
+
+[node name="Tree104" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 18.4744 )
+
+[node name="Tree105" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 16.4744 )
+
+[node name="Tree106" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 14.4744 )
+
+[node name="Tree107" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 12.4744 )
+
+[node name="Tree108" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 10.4744 )
+
+[node name="Tree109" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 8.47445 )
+
+[node name="Tree110" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 6.47445 )
+
+[node name="Tree111" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 4.47445 )
+
+[node name="Tree112" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 2.47445 )
+
+[node name="Tree113" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 0.474445 )
+
+[node name="Tree114" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -1.52555 )
+
+[node name="Tree115" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -3.52555 )
+
+[node name="Tree116" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -5.52555 )
+
+[node name="Tree117" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -7.52555 )
+
+[node name="Tree118" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -9.52555 )
+
+[node name="Tree119" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -11.5256 )
+
+[node name="Tree120" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -13.5256 )
+
+[node name="Tree121" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -15.5256 )
+
+[node name="Tree122" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -17.5256 )
+
+[node name="Tree123" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -19.5256 )
+
+[node name="Tree124" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, -21.5256 )
+
+[node name="Tree125" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, -21.5256 )
+
+[node name="Tree126" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7184, 0, -21.5256 )
+
+[node name="Tree127" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7184, 0, -21.5256 )
+
+[node name="Tree128" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7184, 0, -21.5256 )
+
+[node name="Tree129" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7184, 0, -21.5256 )
+
+[node name="Tree130" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7184, 0, -21.5256 )
+
+[node name="Tree131" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7184, 0, -21.5256 )
+
+[node name="Tree132" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7184, 0, -21.5256 )
+
+[node name="Tree133" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7184, 0, -21.5256 )
+
+[node name="Tree134" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71843, 0, -21.5256 )
+
+[node name="Tree135" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71843, 0, -21.5256 )
+
+[node name="Tree136" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71843, 0, -21.5256 )
+
+[node name="Tree137" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71843, 0, -21.5256 )
+
+[node name="Tree138" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718426, 0, -21.5256 )
+
+[node name="Tree139" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28157, 0, -21.5256 )
+
+[node name="Tree140" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28157, 0, -21.5256 )
+
+[node name="Tree141" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28157, 0, -21.5256 )
+
+[node name="Tree142" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28157, 0, -21.5256 )
+
+[node name="Tree143" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28157, 0, -21.5256 )
+
+[node name="Tree144" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2816, 0, -21.5256 )
+
+[node name="Tree145" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2816, 0, -21.5256 )
+
+[node name="Tree146" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2816, 0, -21.5256 )
+
+[node name="Tree147" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2816, 0, -21.5256 )
+
+[node name="Tree148" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2816, 0, -21.5256 )
+
+[node name="Tree149" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2816, 0, -21.5256 )
+
+[node name="Tree150" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2816, 0, -21.5256 )
+
+[node name="Tree151" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, -21.5256 )
+
+[node name="Tree152" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -21.5256 )
+
+[node name="Tree153" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -19.5256 )
+
+[node name="Tree154" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -17.5256 )
+
+[node name="Tree155" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -15.5256 )
+
+[node name="Tree156" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -13.5256 )
+
+[node name="Tree157" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -11.5256 )
+
+[node name="Tree158" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -9.52555 )
+
+[node name="Tree159" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -7.52555 )
+
+[node name="Tree160" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -5.52555 )
+
+[node name="Tree161" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -3.52555 )
+
+[node name="Tree162" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, -1.52555 )
+
+[node name="Tree163" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 0.474445 )
+
+[node name="Tree164" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 2.47445 )
+
+[node name="Tree165" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 4.47445 )
+
+[node name="Tree166" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 6.47445 )
+
+[node name="Tree167" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 8.47445 )
+
+[node name="Tree168" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 10.4744 )
+
+[node name="Tree169" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 12.4744 )
+
+[node name="Tree170" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 14.4744 )
+
+[node name="Tree171" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 16.4744 )
+
+[node name="Tree172" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 18.4744 )
+
+[node name="Tree173" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 20.4744 )
+
+[node name="Tree174" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 22.4744 )
+
+[node name="Tree175" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 24.4744 )
+
+[node name="Tree176" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 26.4744 )
+
+[node name="Tree177" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 28.4744 )
+
+[node name="Tree178" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2816, 0, 30.4744 )
+
+[node name="Tree179" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2816, 0, 30.4744 )
+
+[node name="Tree180" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2816, 0, 30.4744 )
+
+[node name="Tree181" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2816, 0, 30.4744 )
+
+[node name="Tree182" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2816, 0, 30.4744 )
+
+[node name="Tree183" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2816, 0, 30.4744 )
+
+[node name="Tree184" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2816, 0, 30.4744 )
+
+[node name="Tree185" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2816, 0, 30.4744 )
+
+[node name="Tree186" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2816, 0, 30.4744 )
+
+[node name="Tree187" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28157, 0, 30.4744 )
+
+[node name="Tree188" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28157, 0, 30.4744 )
+
+[node name="Tree189" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28157, 0, 30.4744 )
+
+[node name="Tree190" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28157, 0, 30.4744 )
+
+[node name="Tree191" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28157, 0, 30.4744 )
+
+[node name="Tree192" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718426, 0, 30.4744 )
+
+[node name="Tree193" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71843, 0, 30.4744 )
+
+[node name="Tree194" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71843, 0, 30.4744 )
+
+[node name="Tree195" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71843, 0, 30.4744 )
+
+[node name="Tree196" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71843, 0, 30.4744 )
+
+[node name="Tree197" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7184, 0, 30.4744 )
+
+[node name="Tree198" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7184, 0, 30.4744 )
+
+[node name="Tree199" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7184, 0, 30.4744 )
+
+[node name="Tree200" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7184, 0, 30.4744 )
+
+[node name="Tree201" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7184, 0, 30.4744 )
+
+[node name="Tree202" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7184, 0, 30.4744 )
+
+[node name="Tree203" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7184, 0, 30.4744 )
+
+[node name="Tree204" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7184, 0, 30.4744 )
+
+[node name="Tree205" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 30.4744 )
+
+[node name="Tree206" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 30.4744 )
+
+[node name="Tree207" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 28.4744 )
+
+[node name="Tree208" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 26.4744 )
+
+[node name="Tree209" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7184, 0, 24.4744 )
+
+[node name="Tree93" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 20.4744 )
+
+[node name="Tree94" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 18.4744 )
+
+[node name="Tree95" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 16.4744 )
+
+[node name="Tree96" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 14.4744 )
+
+[node name="Tree97" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 12.4744 )
+
+[node name="Tree98" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 10.4744 )
+
+[node name="Tree99" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 8.47445 )
+
+[node name="Tree100" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 6.47445 )
+
+[node name="Tree101" parent="Asthetic" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7184, 0, 4.47445 )
+
+[node name="Rock" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0676, 0, 0 )
+
+[node name="Rock10" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0676, 0, 10 )
+
+[node name="Rock11" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06761, 0, 17 )
+
+[node name="Rock12" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0676, 0, 11 )
+
+[node name="Rock2" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0676, 0, -5 )
+
+[node name="Rock3" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0676, 0, -3 )
+
+[node name="Rock4" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06761, 0, -3 )
+
+[node name="Rock5" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06761, 0, -12 )
+
+[node name="Rock6" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93239, 0, -12 )
+
+[node name="Rock7" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9324, 0, 3 )
+
+[node name="Rock13" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9324, 0, -5 )
+
+[node name="Rock14" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9324, 0, 8 )
+
+[node name="Rock8" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9324, 0, 15 )
+
+[node name="Rock9" parent="Asthetic" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9324, 0, -6 )
+
+[node name="Mushrooms" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5402, 0, 0 )
+
+[node name="Mushrooms2" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8858, 0, -3.9067 )
+
+[node name="Mushrooms3" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8858, 0, 8.3694 )
+
+[node name="Mushrooms4" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49159, 0, 7.54189 )
+
+[node name="Mushrooms5" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14567, 0, 11.1848 )
+
+[node name="Mushrooms6" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.34743, 0, 3.66709 )
+
+[node name="Mushrooms8" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0533, 0, 10.9176 )
+
+[node name="Mushrooms9" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, -23.5057, 0, 9.22023 )
+
+[node name="Mushrooms10" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, -15.2198, 0, -3.26745 )
+
+[node name="Mushrooms11" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, -20.0539, 0, -13.7317 )
+
+[node name="Mushrooms12" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, -3.62757, 0, -9.13994 )
+
+[node name="Mushrooms13" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, -0.889013, 0, 11.5496 )
+
+[node name="Mushrooms14" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, 15.2387, 0, 21.0076 )
+
+[node name="Mushrooms15" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, 22.7114, 0, 6.03563 )
+
+[node name="Mushrooms16" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, 13.3639, 0, -5.26587 )
+
+[node name="Mushrooms17" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, 24.856, 0, -17.5253 )
+
+[node name="Mushrooms18" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, 23.3269, 0, -15.943 )
+
+[node name="Mushrooms19" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.998496, -0.0548219, 0, 0.0548219, 0.998496, 6.28991, 0, 17.3624 )
+
+[node name="Mushrooms7" parent="Asthetic" instance=ExtResource( 13 )]
+transform = Transform( 0.999384, 0, -0.0350949, 0, 1, 0, 0.0350949, 0, 0.999384, -12.1252, 0, 6.36723 )
+
+[node name="Memories" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.984501, -0.0748834, 0.158588, -0.117371, 0.390575, 0.913058, -0.130313, -0.91752, 0.375733, 26.2349, 53.4629, 0 )
+shadow_enabled = true
+
+[node name="Character" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00722, 1.12669, 4.82194 )
